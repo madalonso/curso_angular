@@ -1,0 +1,11 @@
+<p>input-binding works!</p>
+<p>First name: {{name}}</p>
+<p>Last name: {{lastName}}</p>
+<p>Age: {{age}}</p>
+
+<h1>My clients</h1>
+<div *ngFor="let c of clients_inputbinding">
+    <!-- [client] eh input no client.component.ts-->
+    <app-client [client]="c"></app-client>
+    <hr>
+</div>

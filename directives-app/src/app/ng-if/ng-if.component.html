@@ -1,0 +1,44 @@
+<p>ng-if works!</p>
+
+<mat-card>
+
+    <mat-card-title>
+      Select
+    </mat-card-title>
+  
+    <mat-card-content>
+  
+      <section>
+          <p>Select the fields you need:</p>
+          <section>
+              <mat-checkbox [(ngModel)]="bshowName" name="showName">Name</mat-checkbox>
+              <mat-checkbox [(ngModel)]="bshowAddress" name="showAddress">Address</mat-checkbox>
+              <mat-checkbox [(ngModel)]="bshowPhone" name="showPhone">Phone</mat-checkbox>
+              <mat-checkbox [(ngModel)]="bshowAge" name="showAge">Age</mat-checkbox>
+          </section>
+      </section>
+  
+      <br><br>
+  
+      <section>
+          <mat-form-field *ngIf="bshowName">
+              <input matInput placeholder="Name">
+          </mat-form-field>
+          <mat-form-field *ngIf="bshowAddress">
+              <input matInput placeholder="Address">
+          </mat-form-field>
+          <mat-form-field *ngIf="bshowPhone">
+              <input matInput placeholder="Phone">
+          </mat-form-field>
+          <mat-form-field *ngIf="bshowAge">
+              <input matInput placeholder="Age" type="number">
+          </mat-form-field>                        
+      </section>
+  
+    </mat-card-content>
+  
+    <mat-card-footer>
+        <app-sub-ng-if *ngIf="bshowName && bshowAddress && bshowPhone && bshowAge"></app-sub-ng-if>
+    </mat-card-footer>
+    
+  </mat-card>
